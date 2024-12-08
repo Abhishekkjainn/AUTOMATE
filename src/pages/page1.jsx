@@ -15,7 +15,20 @@ export default function Page1() {
         Automate simplifies autorickshaw booking for VIT students—quick,
         reliable, and effortless!
       </div>
-      <div className="bookingbanner"></div>
+      <div className="banner">
+        <div className="bookingbanner">
+          <div className="top">
+            <div className="circle-small"></div>
+            <div className="tag-name">Save 30% on Travelling</div>
+          </div>
+          <div className="center">
+            <div className="center1">Book Now</div>
+            {/* <div className="center2">Now</div> */}
+            <div className="desc">Autorickshaws on the Go</div>
+          </div>
+          <div className="bookbutton">Get a Ride</div>
+        </div>
+      </div>
     </div>
   );
 }
