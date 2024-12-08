@@ -255,6 +255,7 @@ body{
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  scale: 0.95;
 }
 .topblock{
   width: 80%;
