@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export default function Page1() {
   return (
     <div className="page1">
@@ -26,7 +27,9 @@ export default function Page1() {
             {/* <div className="center2">Now</div> */}
             <div className="desc">Autorickshaws on the Go</div>
           </div>
-          <div className="bookbutton">Get a Ride</div>
+          <Link to={'/book-Ride'} className="bookbutton">
+            Get a Ride
+          </Link>
         </div>
       </div>
     </div>

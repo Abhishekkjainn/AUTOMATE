@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,14 +10,14 @@ export default function Header() {
   return (
     <>
       <div className="header">
-        <div className="company">
+        <Link to={'/'} className="company">
           <img
             src="/automate-black.png"
             alt="Automate Logo"
             className="logoimg"
           />
           <div className="name">Automate</div>
-        </div>
+        </Link>
         <div className="menubutton">
           <img
             src="/menu.png"

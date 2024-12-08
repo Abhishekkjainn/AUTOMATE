@@ -25,7 +25,7 @@ export default function Page2() {
         </div>
         <div className="block3 block">
           <div className="topblock">
-            <div className="no">1.</div>
+            <div className="no">3.</div>
             <img
               src="/tranparent-blue.png"
               alt="Clock"
@@ -37,7 +37,7 @@ export default function Page2() {
         </div>
         <div className="block4 block">
           <div className="topblock">
-            <div className="no">1.</div>
+            <div className="no">4.</div>
             <img src="/reliable-blue.png" alt="Clock" className="topblockimg" />
           </div>
           <div className="centerblock">Reliable & Safe Rides</div>
