@@ -413,11 +413,12 @@ body{
   margin-top: 60px;
 }
 .bookinghead{
-  font-size: 28px;
+  font-size: 42px;
   color: black;
   font-weight: 500;
   margin-top: 20px;
   margin-left: 20px;
+  margin-bottom: 12px;
 }
 .locationdiv{
   margin-top: 20px;
