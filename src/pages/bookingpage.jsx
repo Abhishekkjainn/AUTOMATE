@@ -100,6 +100,7 @@ export default function BookingPage() {
       </div>
       <div className="seconddivpass">
         <div className="passengers">
+          <div className="tagpass">No Of Passengers</div>
           <div className="passengercount">{passengerCount}</div>
           <div className="buttonspassengers">
             <div

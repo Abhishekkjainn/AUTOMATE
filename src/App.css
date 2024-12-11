@@ -471,10 +471,17 @@ body{
   align-items: center;
   flex-direction: column;
 }
+.tagpass{
+  color: black;
+  font-size: 12px;
+  font-weight: 500;
+  transform: translateY(15px);
+}
 .passengercount{
   font-size: 64px;
   font-weight: 600;
   color: black;
+  transform: translateY(12px);
 }
 .buttonspassengers{
   display: flex;
