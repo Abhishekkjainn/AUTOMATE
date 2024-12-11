@@ -11,6 +11,7 @@ body{
   height: 60px;
   border-bottom: 1px solid rgba(173, 173, 173, 0.321);
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;
@@ -321,4 +322,78 @@ body{
   background-image: url('/avatar.png');
   background-position: center;
   background-size: cover;
+}
+
+/*Footer*/
+.footer{
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height:auto;
+  margin-top: 40px;
+  background-color: #000000;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+.companyfooter{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logofooter{
+  width: 40px;
+  margin-right: 20px;
+}
+.namefooter{
+  color: white;
+  font-weight: 500;
+  font-size: 38px;
+}
+.companyslogan{
+  width: 80%;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 12px;
+}
+.twobuttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.primarybuttonfooter{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 40px;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+  margin-right: 12px;
+  text-decoration: none;
+}
+.secondarybuttonfooter{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 40px;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  border: 1px solid white;
+}
+.copyright{
+  border-top: 0.5px solid rgb(66, 66, 66);
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

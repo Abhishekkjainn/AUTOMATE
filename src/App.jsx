@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BookingPage from './pages/bookingpage';
 import Page1 from './pages/page1';
 import Page2 from './pages/page2';
+import Page3 from './pages/page3';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
             <>
               <Page1 />
               <Page2 />
+              {/* <Page3 /> */}
             </>
           }
         />
@@ -24,6 +27,7 @@ function App() {
         {/* Route for Booking Page */}
         <Route path="/book-ride" element={<BookingPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
