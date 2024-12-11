@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
+import Slider from 'react-slider';
 
 export default function BookingPage() {
+  const [time, setTime] = useState(''); // State to manage the selected time
+
+  const handleTimeChange = (event) => {
+    setTime(event.target.value); // Update the time state when user selects a time
+  };
   const [passengerCount, setPassengerCount] = useState(1); // Set default value to 1
 
   const decreasePassengerCount = () => {
@@ -29,6 +35,7 @@ export default function BookingPage() {
 
   const [pickupLocation, setPickupLocation] = useState(null);
   const [dropLocation, setDropLocation] = useState(null);
+  const [isHostelPickup, setIsHostelPickup] = useState(false);
 
   const customStyles = {
     input: (base) => ({
@@ -67,6 +74,7 @@ export default function BookingPage() {
   return (
     <div className="bookingpage">
       <div className="bookinghead">Book A Ride</div>
+
       <div className="locationdiv">
         <div className="pickuplocation">
           <img src="/pin.png" alt="location icon" className="firsticon" />
@@ -98,6 +106,7 @@ export default function BookingPage() {
           />
         </div>
       </div>
+
       <div className="seconddivpass">
         <div className="passengers">
           <div className="tagpass">No Of Passengers</div>
@@ -129,6 +138,33 @@ export default function BookingPage() {
             src={isDay ? '/sun.png' : '/moon.png'} // Change image source based on state
             alt={isDay ? 'Sun' : 'Moon'}
             className="imgdayornight"
+          />
+        </div>
+      </div>
+
+      <div className="seconddivpass">
+        <div className="ridetime">
+          <div className="tagridetime">Ride Time</div>
+          <img src="/clock-blue.png" alt="Clock" className="ridetimeimg" />
+          <input
+            type="time"
+            className="ridetimeinput"
+            value={time}
+            onChange={handleTimeChange}
+          />
+        </div>
+        <div className="fromhostel">
+          <div className="tagridetime">Pickup From Hostel</div>
+          <img src="/hostel.png" alt="Clock" className="ridetimeimg" />
+          <Slider
+            value={isHostelPickup ? 1 : 0}
+            onChange={(value) => setIsHostelPickup(value === 1)}
+            min={0}
+            max={1}
+            step={1}
+            trackStyle={{ backgroundColor: '#ccc' }}
+            thumbStyle={{ backgroundColor: '#3498db' }}
+            handleStyle={{ backgroundColor: '#3498db' }}
           />
         </div>
       </div>

@@ -404,7 +404,7 @@ body{
 .bookingpage{
   width: 100%;
   height: auto;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding-bottom: 40px;
   display: flex;
   justify-content: start;
@@ -531,6 +531,49 @@ body{
   background-color: #030025;
 }
 
+.ridetime{
+  width: 42.5%;
+  margin-left: 5%;
+  /* margin-top: 5%; */
+  margin-bottom: 5%;
+  margin-right: 2.5%;
+  aspect-ratio: 1;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.ridetimeimg{width: 45px;}
+.tagridetime{
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.ridetimeinput {
+  border:none;
+  border-radius: 4px;
+  background-color: white;
+  padding: 6px;
+  font-size: 16px;
+  margin-top: 15px;
+  font-family: 'DM Sans';
+}
+.fromhostel{
+  width: 42.5%;
+  margin-right: 5%;
+  margin-left: 2.5%;
+  /* margin-top: 5%; */
+  margin-bottom: 5%;
+  aspect-ratio: 1;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 
 
