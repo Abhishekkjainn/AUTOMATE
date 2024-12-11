@@ -423,15 +423,15 @@ body{
   margin-top: 20px;
   width: 90%;
   height: auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   background-color: #006EFF;
   margin-left: 5%;
   margin-right: 5%;
   border-radius: 15px;
 }
 .pickuplocation,.droplocation{
-  height: 80px;
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: center;
