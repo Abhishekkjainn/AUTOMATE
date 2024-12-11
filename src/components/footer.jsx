@@ -19,7 +19,9 @@ export default function Footer() {
         </Link>
         <div className="secondarybuttonfooter">Contact Us</div>
       </div>
-      {/* <div className="copyright">Copyright © Automate Vellore 2023</div> */}
+      <div className="copyright">
+        &copy; {new Date().getFullYear()} Automate. All rights reserved.
+      </div>
     </div>
   );
 }

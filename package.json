@@ -12,7 +12,10 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.2"
+    "react-dropdown-select": "^4.11.4",
+    "react-native-dashed-line": "^1.1.0",
+    "react-router-dom": "^7.0.2",
+    "react-select": "^5.8.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

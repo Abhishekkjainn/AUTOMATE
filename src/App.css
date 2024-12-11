@@ -393,7 +393,121 @@ body{
 }
 .copyright{
   border-top: 0.5px solid rgb(66, 66, 66);
-  margin-top: 20px;
+  margin-top: 40px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  color: grey;
+}
+
+
+
+/*Booking Page*/
+.bookingpage{
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 60px;
+}
+.bookinghead{
+  font-size: 36px;
+  color: black;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.locationdiv{
+  margin-top: 20px;
+  width: 90%;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #006EFF;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 15px;
+}
+.pickuplocation,.droplocation{
+  height: 80px;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.droplocation{
+  border: none;
+}
+.firsticon{
+  width: 18px;
+  margin-right: 10px;
+  filter: invert(1);
+}
+.selectinput{
+  width: 80%;
+  border: none;
+}
+
+.bookingsummary{
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: 80px;
+  border-radius: 15px;
+  background-color: #000000;
+  backdrop-filter: blur(15px);
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid #000000; */
+}
+.hide{
+  display: none;
+}
+.firstsummary{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.secondsummary{
+  width: 40%;
+  height: 100%;
+}
+.from,.to{
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 18px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.circle{
+  width: 8px;
+  height: 8px;
+  color: #ffffff;
+  background-color: #006EFF;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.seperator{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  flex: 1;
+  height: 1px;
+  border-top: 1.5px dotted #ffffff;
 }
