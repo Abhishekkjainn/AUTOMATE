@@ -180,7 +180,9 @@ export default function BookingPage() {
             To: {dropLocation ? dropLocation.label : 'Not Selected'}
           </div>
         </div>
-        <div className="secondsummary"></div>
+        <div className="secondsummary">
+          <div className="checkfarebutton">Check Fare</div>
+        </div>
       </div>
     </div>
   );

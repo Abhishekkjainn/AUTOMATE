@@ -620,6 +620,9 @@ body{
 .secondsummary{
   width: 40%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .from,.to{
   color: rgb(255, 255, 255);
@@ -648,4 +651,19 @@ body{
   flex: 1;
   height: 1px;
   border-top: 1.5px dotted #ffffff;
+}
+.checkfarebutton{
+  width: 75%;
+  height: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: white;
+  border-radius: 8px;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
