@@ -17,7 +17,7 @@ export default function BookingPage() {
       textDecoration: 'none',
       fontWeight: '600',
       color: 'white',
-      fontSize: '12px',
+      fontSize: '14px',
       padding: '12px',
     }),
     control: (base) => ({
@@ -33,11 +33,13 @@ export default function BookingPage() {
     }),
     placeholder: (base) => ({
       ...base,
+      fontSize: '14px',
       color: 'white',
       fontStyle: 'bold',
     }),
     singleValue: (base) => ({
       ...base,
+      fontSize: '14px',
       color: 'white',
       fontWeight: 'bold',
     }),
@@ -54,7 +56,7 @@ export default function BookingPage() {
             options={options}
             value={pickupLocation}
             onChange={(selected) => setPickupLocation(selected)}
-            placeholder="Search Pickup location..."
+            placeholder="Search Pickup"
             isClearable
             isSearchable
             className="selectinput"
@@ -70,7 +72,7 @@ export default function BookingPage() {
             options={options}
             value={dropLocation}
             onChange={(selected) => setDropLocation(selected)}
-            placeholder="Search Drop location..."
+            placeholder="Search Drop"
             isClearable
             isSearchable
             className="selectinput"
