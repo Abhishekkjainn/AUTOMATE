@@ -449,12 +449,99 @@ body{
   width: 80%;
   border: none;
 }
+.seconddivpass{
+  width: 100%;
+  height: auto;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.passengers{
+  width: 42.5%;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  aspect-ratio: 1;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.passengercount{
+  font-size: 64px;
+  font-weight: 600;
+  color: black;
+}
+.buttonspassengers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #006EFF;
+  font-size: 36px;
+}
+.decreasebuttonpass{
+  margin-right: 20px;
+}
+.increasebuttonpass{
+  margin-left: 20px;
+}
+.dayornight{
+  width: 42.5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  aspect-ratio: 1;
+  background-color: #006EFF;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tagdayornight{
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+}
+.descdayornight{
+  font-size: 12px;
+  font-weight: 500;
+  color: skyblue;
+  margin-bottom: 12px;
+}
+.imgdayornight{
+  width: 45px;
+}
+.day{
+  background-color: #006EFF;
+}
+.night{
+  background-color: #030025;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .bookingsummary{
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
-  height: 80px;
+  height: 70px;
   border-radius: 15px;
   background-color: #000000;
   backdrop-filter: blur(15px);
@@ -465,7 +552,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 3px solid #000000; */
+  border:1px solid grey;
 }
 .hide{
   display: none;

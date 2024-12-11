@@ -2,6 +2,25 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 
 export default function BookingPage() {
+  const [passengerCount, setPassengerCount] = useState(1); // Set default value to 1
+
+  const decreasePassengerCount = () => {
+    if (passengerCount > 1) {
+      setPassengerCount(passengerCount - 1); // Decrease count only if it's above 1
+    }
+  };
+
+  const increasePassengerCount = () => {
+    if (passengerCount < 5) {
+      setPassengerCount(passengerCount + 1); // Increase count only if it's below 5
+    }
+  };
+  const [isDay, setIsDay] = useState(true); // Initially set to "Day"
+
+  const toggleDayNight = () => {
+    setIsDay(!isDay); // Toggle between day and night
+  };
+
   const options = [
     { value: 'katpadi', label: 'Katpadi Junction' },
     { value: 'vit_main_gate', label: 'VIT Main Gate' },
@@ -48,7 +67,6 @@ export default function BookingPage() {
   return (
     <div className="bookingpage">
       <div className="bookinghead">Book A Ride</div>
-
       <div className="locationdiv">
         <div className="pickuplocation">
           <img src="/pin.png" alt="location icon" className="firsticon" />
@@ -77,6 +95,39 @@ export default function BookingPage() {
             isSearchable
             className="selectinput"
             styles={customStyles}
+          />
+        </div>
+      </div>
+      <div className="seconddivpass">
+        <div className="passengers">
+          <div className="passengercount">{passengerCount}</div>
+          <div className="buttonspassengers">
+            <div
+              className="decreasebuttonpass"
+              onClick={decreasePassengerCount}
+            >
+              -
+            </div>
+            <div
+              className="increasebuttonpass"
+              onClick={increasePassengerCount}
+            >
+              +
+            </div>
+          </div>
+        </div>
+        <div
+          className={`dayornight ${isDay ? 'day' : 'night'}`} // Apply different background based on state
+          onClick={toggleDayNight}
+        >
+          <div className="tagdayornight">{isDay ? 'Day' : 'Night'}</div>
+          <div className="descdayornight">
+            {isDay ? 'From 7AM to 11PM' : 'From 11PM to 7AM'}
+          </div>
+          <img
+            src={isDay ? '/sun.png' : '/moon.png'} // Change image source based on state
+            alt={isDay ? 'Sun' : 'Moon'}
+            className="imgdayornight"
           />
         </div>
       </div>
