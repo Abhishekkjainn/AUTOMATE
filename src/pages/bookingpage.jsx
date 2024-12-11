@@ -17,7 +17,7 @@ export default function BookingPage() {
       textDecoration: 'none',
       fontWeight: '600',
       color: 'white',
-      fontSize: '16px',
+      fontSize: '12px',
       padding: '12px',
     }),
     control: (base) => ({

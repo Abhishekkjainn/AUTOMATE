@@ -413,7 +413,7 @@ body{
   margin-top: 60px;
 }
 .bookinghead{
-  font-size: 36px;
+  font-size: 28px;
   color: black;
   font-weight: 500;
   margin-top: 20px;
@@ -433,7 +433,6 @@ body{
 .pickuplocation,.droplocation{
   height: 80px;
   width: 100%;
-  
   display: flex;
   justify-content: center;
   align-items: center;
