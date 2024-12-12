@@ -265,15 +265,17 @@ export default function BookingPage() {
                   <div className="driverbutton">
                     <div className="driverselectbutton">
                       {/* Check if the driver is selected */}
-                      {selectedDriver.id === driver.id ? (
-                        <img
-                          src="/correct.png"
-                          alt="check"
-                          className="selectedtag"
-                        />
-                      ) : (
-                        <div className="none"></div>
-                      )}
+                      {selectedDriver != null ? (
+                        selectedDriver.id === driver.id ? (
+                          <img
+                            src="/correct.png"
+                            alt="check"
+                            className="selectedtag"
+                          />
+                        ) : (
+                          <div className="none"></div>
+                        )
+                      ) : null}
                     </div>
                   </div>
                 </div>
