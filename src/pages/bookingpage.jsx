@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 
 export default function BookingPage() {
-  const [time, setTime] = useState(''); // State to manage the selected time
+  const [time, setTime] = useState(new Date().toISOString().slice(11, 16)); // Set default to current time
   const [passengerCount, setPassengerCount] = useState(1); // Set default value to 1
   const [isDay, setIsDay] = useState(true); // Initially set to "Day"
   const [isHostelPickup, setIsHostelPickup] = useState(false); // Toggle for hostel pickup
@@ -149,21 +149,23 @@ export default function BookingPage() {
         </div>
       </div>
 
-      <div className="bookingsummary">
-        <div className="firstsummary">
-          <div className="from">
-            <div className="circle"></div>
-            From: {pickupLocation ? pickupLocation.label : 'Not Selected'}
+      {(pickupLocation || dropLocation) && ( // Show summary only if pickup or drop is selected
+        <div className="bookingsummary">
+          <div className="firstsummary">
+            <div className="from">
+              <div className="circle"></div>
+              From: {pickupLocation ? pickupLocation.label : 'Not Selected'}
+            </div>
+            <div className="to">
+              <div className="circle"></div>
+              To: {dropLocation ? dropLocation.label : 'Not Selected'}
+            </div>
           </div>
-          <div className="to">
-            <div className="circle"></div>
-            To: {dropLocation ? dropLocation.label : 'Not Selected'}
+          <div className="secondsummary">
+            <div className="checkfarebutton">Check Fare</div>
           </div>
         </div>
-        <div className="secondsummary">
-          <div className="checkfarebutton">Check Fare</div>
-        </div>
-      </div>
+      )}
     </div>
   );
 }
