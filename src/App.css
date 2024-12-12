@@ -778,13 +778,80 @@ body{
 }
 
 
+.index3{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-
-
-
-
-
-
+.bookridefinalbuttondiv{
+  width: 80%;
+  height: 60px;
+  border-radius: 40px;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 1px solid grey;
+}
+.locationdetailssummary{
+  margin-top: 12px;
+  width: 90%;
+  height: auto;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  padding-bottom: 25px;
+}
+.pickupsummary{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.pickuptagsumary{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 25px;
+  margin-left: 25px;
+  color: grey;
+}
+.pickuplocationname{
+  margin-left: 25px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.circlesummary{
+  width: 8px;
+  height: 8px;
+}
+.sep{
+  width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex: 1;
+    height: 1px;
+    border-top: 1.5px dotted rgb(97, 97, 97);
+    margin-top: 20px;
+}
 
 
 

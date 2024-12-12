@@ -281,7 +281,25 @@ export default function BookingPage() {
           </div>
         </div>
       ) : index === 2 ? (
-        <div className="index3"></div>
+        <div className="index3">
+          <div className="locationdetailssummary">
+            <div className="pickupsummary">
+              <div className="pickuptagsumary">
+                <div className="circle-small circlesummary"></div>
+                Pickup Location
+              </div>
+              <div className="pickuplocationname">{pickupLocation.label}</div>
+            </div>
+            <div className="sep"></div>
+            <div className="pickupsummary">
+              <div className="pickuptagsumary">
+                <div className="circle-small circlesummary"></div>
+                Drop Location
+              </div>
+              <div className="pickuplocationname">{dropLocation.label}</div>
+            </div>
+          </div>
+        </div>
       ) : null}
 
       {index === 0 ? (
@@ -329,7 +347,7 @@ export default function BookingPage() {
           </div>
         </>
       ) : (
-        <div className="bookridefinalbuttondiv"></div>
+        <div className="bookridefinalbuttondiv">Book the Ride</div>
       )}
     </div>
   );
