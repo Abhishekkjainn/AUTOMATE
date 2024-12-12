@@ -420,6 +420,9 @@ body{
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .index1{
   width: 100%;
@@ -769,7 +772,10 @@ body{
 .selectedtag{
   width: 20px;
 }
-
+.backbutton{
+  width: 20px;
+  margin-right: 12px;
+}
 
 
 

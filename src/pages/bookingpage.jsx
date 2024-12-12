@@ -119,7 +119,17 @@ export default function BookingPage() {
   return (
     <div className="bookingpage">
       {/* Booking Header */}
-      <div className="bookinghead">Book A Ride</div>
+      <div className="bookinghead">
+        {index === 1 || index === 2 ? (
+          <img
+            src="/back.png"
+            alt="Back button"
+            className="backbutton"
+            onClick={() => setIndex(index - 1)}
+          />
+        ) : null}
+        {index === 0 || index === 1 ? 'Book A Ride' : 'Summary'}
+      </div>
 
       {index === 0 ? (
         <div className="index1">
@@ -229,7 +239,7 @@ export default function BookingPage() {
             </div>
           </div>
         </div>
-      ) : (
+      ) : index === 1 ? (
         <div className="index2">
           <div className="path"></div>
           <div className="driversList">
@@ -270,7 +280,9 @@ export default function BookingPage() {
               ))}
           </div>
         </div>
-      )}
+      ) : index === 2 ? (
+        <div className="index3"></div>
+      ) : null}
 
       {index === 0 ? (
         // Screen 0 (First Screen) - Show Booking Summary before fare check
@@ -295,7 +307,7 @@ export default function BookingPage() {
             </div>
           )}
         </>
-      ) : (
+      ) : index === 1 ? (
         // Screen 1 (Second Screen) - After fare check or when index is 1
         <>
           <div className="bookingsummary">
@@ -310,12 +322,14 @@ export default function BookingPage() {
               </div>
             </div>
             <div className="secondsummary">
-              <div className="checkfarebutton">
+              <div className="checkfarebutton" onClick={() => setIndex(2)}>
                 {loading ? <span className="loader"></span> : 'Confirm Driver'}
               </div>
             </div>
           </div>
         </>
+      ) : (
+        <div className="bookridefinalbuttondiv"></div>
       )}
     </div>
   );
