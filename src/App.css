@@ -900,6 +900,21 @@ body{
   margin-top: 25px;
   border: 1px solid grey;
 }
+.faresummary{
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faretag2{
+  font-size: 18px;
+  font-weight: 800;
+}
+.finalFare{
+  font-size: 18px;
+  font-weight: 800;
+}
 
 
 

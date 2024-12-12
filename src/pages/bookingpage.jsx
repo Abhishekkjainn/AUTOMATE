@@ -344,6 +344,11 @@ export default function BookingPage() {
               </div>
             </div>
           </div>
+          <div className="sep"></div>
+          <div className="faresummary">
+            <div className="faretag2">Total Fare</div>
+            <div className="finalFare">{fareData.fare.split(' ')[0]}</div>
+          </div>
           <div className="submitbutton">Book the Ride</div>
         </div>
       ) : null}
