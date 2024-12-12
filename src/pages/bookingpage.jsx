@@ -14,6 +14,8 @@ export default function BookingPage() {
   const [locations, setLocations] = useState([]); // Store fetched locations from options.json
   const [index, setIndex] = useState(0);
   const [driverData, setDriverData] = useState(null);
+  const [driverId, setDriverId] = useState(null);
+  const [selectedDriver, setSelectedDriver] = useState(null);
 
   // Fetch locations on component mount
   useEffect(() => {
@@ -228,7 +230,46 @@ export default function BookingPage() {
           </div>
         </div>
       ) : (
-        <div className="index2"></div>
+        <div className="index2">
+          <div className="path"></div>
+          <div className="driversList">
+            <div className="selectdriverhead">Select Your Driver</div>
+            {driverData &&
+              driverData.drivers.map((driver) => (
+                <div
+                  className="drivertile"
+                  key={driver.id}
+                  onClick={() => setSelectedDriver(driver.id)} // Use function in onClick
+                >
+                  <div className="driverinfo">
+                    <img
+                      src={driver.image} // Dynamic image
+                      alt="Driver"
+                      className="driverimg"
+                    />
+                    <div className="driverinfodetails">
+                      <div className="drivername">{driver.name}</div>
+                      <div className="driverage">Age - {driver.age}</div>
+                    </div>
+                  </div>
+                  <div className="driverbutton">
+                    <div className="driverselectbutton">
+                      {/* Check if the driver is selected */}
+                      {selectedDriver === driver.id ? (
+                        <img
+                          src="/correct.png"
+                          alt="check"
+                          className="selectedtag"
+                        />
+                      ) : (
+                        <div className="none"></div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
       )}
 
       {index === 0 ? (

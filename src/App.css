@@ -679,7 +679,7 @@ body{
 }
 .from2{
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .to2{
   font-size: 8px;
@@ -688,6 +688,109 @@ body{
 .circlehide{
   display: none;
 }
+
+/*Index 2*/
+.index2{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.driversList{
+  margin-top: 20px;
+  width: 90%;
+  height: auto;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.selectdriverhead{
+  width: 90%;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.drivertile{
+  width: 90%;
+  height: 80px;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.driverinfo{
+  width:80%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.driverbutton{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.driverimg{
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+.driverinfodetails{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin-left: 12px;
+}
+.drivername{
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+.driverage{
+  font-size: 12px;
+  color: grey;
+  font-weight: 500;
+}
+.selectedtag{
+  width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*Toggle*/
 .switch {
