@@ -16,6 +16,9 @@ export default function BookingPage() {
   const [driverData, setDriverData] = useState(null);
   const [driverId, setDriverId] = useState(null);
   const [selectedDriver, setSelectedDriver] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false); // Modal state
+  const [userName, setUserName] = useState('');
+  const [userPhone, setUserPhone] = useState('');
 
   // Fetch locations on component mount
   useEffect(() => {
@@ -23,6 +26,16 @@ export default function BookingPage() {
       .then((response) => response.json())
       .then((data) => setLocations(data.options))
       .catch((error) => console.error('Error loading JSON:', error));
+  }, []);
+
+  useEffect(() => {
+    // Check if user data is already stored
+    const storedName = localStorage.getItem('username');
+    const storedPhone = localStorage.getItem('phone');
+    if (storedName && storedPhone) {
+      setUserName(storedName);
+      setUserPhone(storedPhone);
+    }
   }, []);
 
   // Custom styles for the Select component
@@ -79,7 +92,54 @@ export default function BookingPage() {
   };
 
   // Handle fare check when locations are selected
+  // const handleCheckFare = async () => {
+  //   if (!pickupLocation || !dropLocation) {
+  //     alert('Please select both pickup and drop locations.');
+  //     return;
+  //   }
+
+  //   setLoading(true); // Start loading
+  //   setFareData(null); // Reset fare data
+
+  //   const driverUrl = 'https://automateapi.vercel.app/v1/drivers-info';
+
+  //   const apiURL = `https://automateapi.vercel.app/v1/fare/pickup=${
+  //     pickupLocation.value
+  //   }/drop=${
+  //     dropLocation.value
+  //   }/passengers=${passengerCount}/time=${time}/advancebooking=false/date=${
+  //     new Date().toISOString().split('T')[0]
+  //   }/night=${!isDay}/noofautosrequired=1/fromhostel=${isHostelPickup}`;
+
+  //   try {
+  //     const response = await fetch(apiURL);
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch fare details');
+  //     }
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setFareData(data);
+  //     getDrivers();
+  //     setIndex(1);
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert('Error fetching fare details. Please try again later.');
+  //   } finally {
+  //     setLoading(false); // Stop loading
+  //   }
+  // };
+
   const handleCheckFare = async () => {
+    // Check if user data is in local storage
+    const storedName = localStorage.getItem('username');
+    const storedPhone = localStorage.getItem('phone');
+
+    if (!storedName || !storedPhone) {
+      // Show modal if user data is not available
+      setModalVisible(true);
+      return;
+    }
+
     if (!pickupLocation || !dropLocation) {
       alert('Please select both pickup and drop locations.');
       return;
@@ -87,8 +147,6 @@ export default function BookingPage() {
 
     setLoading(true); // Start loading
     setFareData(null); // Reset fare data
-
-    const driverUrl = 'https://automateapi.vercel.app/v1/drivers-info';
 
     const apiURL = `https://automateapi.vercel.app/v1/fare/pickup=${
       pickupLocation.value
@@ -107,13 +165,29 @@ export default function BookingPage() {
       console.log(data);
       setFareData(data);
       getDrivers();
-      setIndex(1);
+      setIndex(1); // Proceed to the next page
     } catch (error) {
       console.error(error);
       alert('Error fetching fare details. Please try again later.');
     } finally {
       setLoading(false); // Stop loading
     }
+  };
+
+  const handleSaveUserDetails = () => {
+    if (!userName || !userPhone) {
+      alert('Please enter both name and phone number.');
+      return;
+    }
+    if (!/^\d{10}$/.test(userPhone)) {
+      alert('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    // Save to localStorage
+    localStorage.setItem('username', userName);
+    localStorage.setItem('phone', userPhone);
+    setModalVisible(false); // Close modal
   };
 
   return (
@@ -238,6 +312,12 @@ export default function BookingPage() {
               </label>
             </div>
           </div>
+          <div
+            className="editpassengerbutton"
+            onClick={() => setModalVisible(true)}
+          >
+            Edit User Information
+          </div>
         </div>
       ) : index === 1 ? (
         <div className="index2">
@@ -343,6 +423,18 @@ export default function BookingPage() {
                 Time of Ride - {time}
               </div>
             </div>
+            <div className="pickupfromhostel">
+              <div className="pickuptagsumary">
+                <div className="circle-small circlesummary blackcircle"></div>
+                Name - {localStorage.getItem('username')}
+              </div>
+            </div>
+            <div className="pickupfromhostel">
+              <div className="pickuptagsumary">
+                <div className="circle-small circlesummary blackcircle"></div>
+                Phone - {localStorage.getItem('phone')}
+              </div>
+            </div>
           </div>
           <div className="sep"></div>
           <div className="faresummary">
@@ -352,6 +444,43 @@ export default function BookingPage() {
           <div className="submitbutton">Book the Ride</div>
         </div>
       ) : null}
+
+      {modalVisible && (
+        <div className="modal-overlay">
+          <div className="modal-container">
+            <button
+              className="modal-close"
+              onClick={() => setModalVisible(false)}
+            >
+              ×
+            </button>
+            <div className="modal-header">Enter Your Details</div>
+            <div className="modal-content">
+              Please provide your name and phone number to proceed with the
+              booking.
+            </div>
+            <input
+              type="text"
+              className="modal-input"
+              placeholder="Your Name"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <input
+              type="tel"
+              className="modal-input"
+              placeholder="Phone Number"
+              value={userPhone}
+              onChange={(e) => setUserPhone(e.target.value)}
+            />
+            <div className="modal-buttons">
+              <button className="modal-button" onClick={handleSaveUserDetails}>
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {index === 0 ? (
         // Screen 0 (First Screen) - Show Booking Summary before fare check
@@ -391,7 +520,16 @@ export default function BookingPage() {
               </div>
             </div>
             <div className="secondsummary">
-              <div className="checkfarebutton" onClick={() => setIndex(2)}>
+              <div
+                className="checkfarebutton"
+                onClick={() => {
+                  if (selectedDriver != null) {
+                    setIndex(2);
+                  } else {
+                    alert('Please select a driver');
+                  }
+                }}
+              >
                 {loading ? <span className="loader"></span> : 'Confirm Driver'}
               </div>
             </div>
