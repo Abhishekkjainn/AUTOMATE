@@ -249,7 +249,7 @@ export default function BookingPage() {
                 <div
                   className="drivertile"
                   key={driver.id}
-                  onClick={() => setSelectedDriver(driver.id)} // Use function in onClick
+                  onClick={() => setSelectedDriver(driver)} // Use function in onClick
                 >
                   <div className="driverinfo">
                     <img
@@ -265,7 +265,7 @@ export default function BookingPage() {
                   <div className="driverbutton">
                     <div className="driverselectbutton">
                       {/* Check if the driver is selected */}
-                      {selectedDriver === driver.id ? (
+                      {selectedDriver.id === driver.id ? (
                         <img
                           src="/correct.png"
                           alt="check"
@@ -282,6 +282,27 @@ export default function BookingPage() {
         </div>
       ) : index === 2 ? (
         <div className="index3">
+          <div className="drivertile drivertilesummary">
+            <div className="driverinfo">
+              <img
+                src={selectedDriver.image} // Dynamic image
+                alt="Driver"
+                className="driverimg"
+              />
+              <div className="driverinfodetails">
+                <div className="drivername drivernamesummary">
+                  {selectedDriver.name}
+                </div>
+                <div className="driverage driveragesummary">
+                  Age - {selectedDriver.age}
+                </div>
+              </div>
+            </div>
+            <div className="driverbutton driverbuttonsummary">
+              <div className="faretag">Fare</div>
+              {fareData.fare.split(' ')[0]}
+            </div>
+          </div>
           <div className="locationdetailssummary">
             <div className="pickupsummary">
               <div className="pickuptagsumary">
@@ -297,6 +318,22 @@ export default function BookingPage() {
                 Drop Location
               </div>
               <div className="pickuplocationname">{dropLocation.label}</div>
+            </div>
+          </div>
+          <div className="specifics">
+            <div className="pickupfromhostel">
+              {isHostelPickup ? (
+                <div className="pickuptagsumary">
+                  <div className="circle-small circlesummary blackcircle"></div>
+                  Pickup From Hostel
+                </div>
+              ) : null}
+            </div>
+            <div className="pickupfromhostel">
+              <div className="pickuptagsumary">
+                <div className="circle-small circlesummary blackcircle"></div>
+                Passengers - {passengerCount}
+              </div>
             </div>
           </div>
         </div>

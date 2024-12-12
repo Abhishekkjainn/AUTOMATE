@@ -852,7 +852,42 @@ body{
     border-top: 1.5px dotted rgb(97, 97, 97);
     margin-top: 20px;
 }
+.specifics{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.blackcircle{
+  background-color: black;
+  margin-left: 20px;
+}
+.drivertilesummary{
+  background-color: #000000;
+  color: white;
+}
+.driverinfodetails{
 
+}
+.driverbuttonsummary{
+  font-size: 18px;
+  font-weight: 600;
+  flex-direction: column;
+}
+.faretag{
+  color: grey;
+  font-size: 10px;
+  font-weight: 600;
+}
+.drivernamesummary{
+  
+  font-weight: 600;
+  color: white;
+ 
+}
+.driveragesummary{
+  color: grey;
+}
 
 
 
