@@ -337,7 +337,14 @@ export default function BookingPage() {
                 Passengers - {passengerCount}
               </div>
             </div>
+            <div className="pickupfromhostel">
+              <div className="pickuptagsumary">
+                <div className="circle-small circlesummary blackcircle"></div>
+                Time of Ride - {time}
+              </div>
+            </div>
           </div>
+          <div className="submitbutton">Book the Ride</div>
         </div>
       ) : null}
 
@@ -385,9 +392,7 @@ export default function BookingPage() {
             </div>
           </div>
         </>
-      ) : (
-        <div className="bookridefinalbuttondiv">Book the Ride</div>
-      )}
+      ) : null}
     </div>
   );
 }

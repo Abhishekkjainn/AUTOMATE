@@ -785,6 +785,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 40px;
 }
 
 .bookridefinalbuttondiv{
@@ -857,6 +858,7 @@ body{
   display: flex;
   justify-content: start;
   align-items: center;
+  flex-wrap: wrap;
 }
 .blackcircle{
   background-color: black;
@@ -877,13 +879,26 @@ body{
   font-weight: 600;
 }
 .drivernamesummary{
-  
   font-weight: 600;
   color: white;
  
 }
 .driveragesummary{
   color: grey;
+}
+.submitbutton{
+  width: 80%;
+  height: 60px;
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  border: 1px solid grey;
 }
 
 
