@@ -6,6 +6,7 @@ import Page1 from './pages/page1';
 import Page2 from './pages/page2';
 import Page3 from './pages/page3';
 import Footer from './components/footer';
+import SelectDriver from './pages/selectDriver';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
 
         {/* Route for Booking Page */}
         <Route path="/book-ride" element={<BookingPage />} />
+        {/* <Route path="/book-ride/drivers" element={<SelectDriver />} /> */}
       </Routes>
       <Footer />
     </Router>

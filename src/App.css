@@ -401,6 +401,7 @@ body{
 
 
 /*Booking Page*/
+
 .bookingpage{
   width: 100%;
   height: auto;
@@ -419,6 +420,10 @@ body{
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 12px;
+}
+.index1{
+  width: 100%;
+  
 }
 .locationdiv{
   margin-top: 20px;
@@ -666,6 +671,21 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.circle2{
+  width: 14px;
+  height: 14px;
+  margin-right: 12px;
+}
+.from2{
+  font-size: 18px;
+}
+.to2{
+  font-size: 10px;
+  color: grey;
+}
+.circlehide{
+  display: none;
 }
 
 /*Toggle*/
