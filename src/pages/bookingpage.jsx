@@ -1,41 +1,19 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import Slider from 'react-slider';
 
 export default function BookingPage() {
   const [time, setTime] = useState(''); // State to manage the selected time
-
-  const handleTimeChange = (event) => {
-    setTime(event.target.value); // Update the time state when user selects a time
-  };
   const [passengerCount, setPassengerCount] = useState(1); // Set default value to 1
-
-  const decreasePassengerCount = () => {
-    if (passengerCount > 1) {
-      setPassengerCount(passengerCount - 1); // Decrease count only if it's above 1
-    }
-  };
-
-  const increasePassengerCount = () => {
-    if (passengerCount < 5) {
-      setPassengerCount(passengerCount + 1); // Increase count only if it's below 5
-    }
-  };
   const [isDay, setIsDay] = useState(true); // Initially set to "Day"
-
-  const toggleDayNight = () => {
-    setIsDay(!isDay); // Toggle between day and night
-  };
+  const [isHostelPickup, setIsHostelPickup] = useState(false); // Toggle for hostel pickup
+  const [pickupLocation, setPickupLocation] = useState(null);
+  const [dropLocation, setDropLocation] = useState(null);
 
   const options = [
     { value: 'katpadi', label: 'Katpadi Junction' },
     { value: 'vit_main_gate', label: 'VIT Main Gate' },
     { value: 'vellore_fort', label: 'Vellore Fort' },
   ];
-
-  const [pickupLocation, setPickupLocation] = useState(null);
-  const [dropLocation, setDropLocation] = useState(null);
-  const [isHostelPickup, setIsHostelPickup] = useState(false);
 
   const customStyles = {
     input: (base) => ({
@@ -114,13 +92,17 @@ export default function BookingPage() {
           <div className="buttonspassengers">
             <div
               className="decreasebuttonpass"
-              onClick={decreasePassengerCount}
+              onClick={() =>
+                passengerCount > 1 && setPassengerCount(passengerCount - 1)
+              }
             >
               -
             </div>
             <div
               className="increasebuttonpass"
-              onClick={increasePassengerCount}
+              onClick={() =>
+                passengerCount < 5 && setPassengerCount(passengerCount + 1)
+              }
             >
               +
             </div>
@@ -128,7 +110,7 @@ export default function BookingPage() {
         </div>
         <div
           className={`dayornight ${isDay ? 'day' : 'night'}`} // Apply different background based on state
-          onClick={toggleDayNight}
+          onClick={() => setIsDay(!isDay)}
         >
           <div className="tagdayornight">{isDay ? 'Day' : 'Night'}</div>
           <div className="descdayornight">
@@ -150,22 +132,20 @@ export default function BookingPage() {
             type="time"
             className="ridetimeinput"
             value={time}
-            onChange={handleTimeChange}
+            onChange={(e) => setTime(e.target.value)}
           />
         </div>
         <div className="fromhostel">
           <div className="tagridetime">Pickup From Hostel</div>
           <img src="/hostel.png" alt="Clock" className="ridetimeimg" />
-          <Slider
-            value={isHostelPickup ? 1 : 0}
-            onChange={(value) => setIsHostelPickup(value === 1)}
-            min={0}
-            max={1}
-            step={1}
-            trackStyle={{ backgroundColor: '#ccc' }}
-            thumbStyle={{ backgroundColor: '#3498db' }}
-            handleStyle={{ backgroundColor: '#3498db' }}
-          />
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={isHostelPickup}
+              onChange={() => setIsHostelPickup(!isHostelPickup)}
+            />
+            <span className="slider"></span>
+          </label>
         </div>
       </div>
 
