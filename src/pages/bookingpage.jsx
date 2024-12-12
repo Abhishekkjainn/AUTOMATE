@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
+import { useNavigate } from 'react-router-dom';
 
 export default function BookingPage() {
+  const navigate = useNavigate();
   // State Hooks
   const [time, setTime] = useState(new Date().toISOString().slice(11, 16)); // Default to current time
   const [passengerCount, setPassengerCount] = useState(1); // Default passenger count to 1
@@ -19,6 +21,7 @@ export default function BookingPage() {
   const [modalVisible, setModalVisible] = useState(false); // Modal state
   const [userName, setUserName] = useState('');
   const [userPhone, setUserPhone] = useState('');
+  const [bookingData, setBookingData] = useState(null);
 
   // Fetch locations on component mount
   useEffect(() => {
@@ -188,6 +191,47 @@ export default function BookingPage() {
     localStorage.setItem('username', userName);
     localStorage.setItem('phone', userPhone);
     setModalVisible(false); // Close modal
+  };
+
+  const bookTheRide = async () => {
+    if (!pickupLocation || !dropLocation || !selectedDriver) {
+      alert('Please select pickup location, drop location, and a driver.');
+      return;
+    }
+
+    const url = `https://automateapi.vercel.app/v1/book/pickup=${
+      pickupLocation.value
+    }/drop=${
+      dropLocation.value
+    }/passengers=${passengerCount}/time=${time}/advancebooking=false/date=${
+      new Date().toISOString().split('T')[0]
+    }/night=${!isDay}/noofautosrequired=1/fromhostel=${isHostelPickup}/driverid=${
+      selectedDriver.id
+    }/finalfare=${
+      fareData.fare.split(' ')[0]
+    }/passengername=${encodeURIComponent(
+      localStorage.getItem('username')
+    )}/passengerphone=${localStorage.getItem('phone')}`;
+
+    setLoading(true);
+    try {
+      const response = await fetch(url, { method: 'GET' });
+      if (!response.ok) {
+        throw new Error('Failed to book the ride.');
+      }
+
+      const result = await response.json();
+      setBookingData(result); // Save the result in state for further use
+      alert('Booking successful!');
+      console.log(result);
+      navigate('/book-ride/succesful', { state: { bookingDetails: result } });
+      // Optionally, redirect to a success page or display confirmation details
+    } catch (error) {
+      console.error(error);
+      alert('Error booking the ride. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -441,7 +485,9 @@ export default function BookingPage() {
             <div className="faretag2">Total Fare</div>
             <div className="finalFare">{fareData.fare.split(' ')[0]}</div>
           </div>
-          <div className="submitbutton">Book the Ride</div>
+          <div className="submitbutton" onClick={() => bookTheRide()}>
+            {loading ? <span className="loader2"></span> : 'Book the Ride'}
+          </div>
         </div>
       ) : null}
 
