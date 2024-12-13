@@ -8,6 +8,7 @@ import Page3 from './pages/page3';
 import Footer from './components/footer';
 import SelectDriver from './pages/selectDriver';
 import BookingSuccessful from './pages/bookingSuccessful';
+import Terms from './pages/termsandconditions';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         {/* Route for Booking Page */}
         <Route path="/book-ride" element={<BookingPage />} />
         <Route path="/book-ride/succesful" element={<BookingSuccessful />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
       <Footer />
     </Router>

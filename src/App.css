@@ -22,10 +22,10 @@ body{
   align-items: center;
 }
 .company{
-  width: 60%;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   text-decoration: none;
 }
@@ -38,7 +38,7 @@ body{
 }
 .logoimg{
   width: 25px;
-  margin-left: 16px;
+  /* margin-left: 16px; */
 }
 .menuimg{
   width: 20px;
@@ -1302,4 +1302,18 @@ a{
   color: grey;
   font-weight: 600;
   margin-bottom: 20px;
+}
+
+.terms{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  text-align: justify;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin: 60px;
+}
+.termshead{
+  text-align: start;
 }

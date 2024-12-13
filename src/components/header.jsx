@@ -18,20 +18,20 @@ export default function Header() {
           />
           <div className="name">Automate</div>
         </Link>
-        <div className="menubutton">
+        {/* <div className="menubutton">
           <img
             src="/menu.png"
             alt="Menu Icon"
             className="menuimg"
             onClick={toggleMenu}
           />
-        </div>
+        </div> */}
       </div>
-      <div className={`menubar ${menuOpen ? 'menubar-open' : ''}`}>
+      {/* <div className={`menubar ${menuOpen ? 'menubar-open' : ''}`}>
         <button className="close-button" onClick={toggleMenu}>
           &times;
         </button>
-      </div>
+      </div> */}
     </>
   );
 }
