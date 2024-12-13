@@ -31,6 +31,7 @@ export default function BookingSuccessful() {
         <Lottie options={defaultOptions} height={250} width={250} />
       </div>
       <div className="successheading">Booking Successful</div>
+      <div className="mssg">Please call the Driver and confirm the Booking</div>
       <div className="locationbooking">
         <div className="circle-small"></div> {bookingDetails.pickup}{' '}
         <img src="/arrow.png" alt="" className="arrow" /> {bookingDetails.drop}
@@ -48,8 +49,7 @@ export default function BookingSuccessful() {
       <div className="driverDetails">
         <div className="driverinfobooking">
           <img
-            // src={bookingDetails.driver.image}
-            src="https://media.istockphoto.com/id/1377893181/photo/shot-of-young-man-delivering-a-package-while-sitting-in-a-vehicle.jpg?s=612x612&w=0&k=20&c=yOMqI9TcSFRPKuLl40lUsjYmRkji9hoH_eUtKPUrZwk="
+            src={bookingDetails.driver.image}
             alt="Driver image"
             className="driverimgbooking"
           />
@@ -71,7 +71,12 @@ export default function BookingSuccessful() {
           {bookingDetails.driver.license}
         </div>
       </div>
-      <div className="calldriverbutton">Call Driver</div>
+      <a
+        href={`tel:${bookingDetails.driver.phone}`}
+        className="calldriverbutton"
+      >
+        Call Driver
+      </a>
     </div>
   );
 }
