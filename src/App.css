@@ -1163,3 +1163,134 @@ input:checked + .slider:before {
   border-radius: 5px;
   cursor: pointer;
 }
+
+
+
+
+/*Booking Succesful*/
+.succcesfulbooking{
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.successheading{
+  font-size: 28px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 20px;
+}
+.arrow{
+  width: 25px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.locationbooking{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: grey;
+}
+.passengersbooking{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: grey;
+}
+.driverDetails{
+  margin-top: 30px;
+  width: 75%;
+  height: auto;
+  padding: 16px;
+  /* height: 120px; */
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #000000;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.driverinfobooking{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.driverimgbooking{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.infobooking{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin-left: 16px;
+}
+.drivernamebooking{
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+}
+.driveragebooking{
+  font-size: 12px;
+  color: grey;
+  font-weight: 600;
+}
+.circlebooking{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 8px;
+}
+.driverspecifics{
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 12px;
+  margin-left: 12px;
+  margin-top: 20px;
+}
+.driverspecifics2{
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 12px;
+  margin-left: 12px;
+  margin-top: 12px;
+  margin-top: 12px;
+}
+.calldriverbutton{
+  background-color: #006EFF;
+  width: 80%;
+  height: 60px;
+  /* padding: 10px 25px; */
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 40px;
+
+}
