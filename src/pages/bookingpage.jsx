@@ -222,7 +222,7 @@ export default function BookingPage() {
 
       const result = await response.json();
       setBookingData(result); // Save the result in state for further use
-      alert('Booking successful!');
+      // alert('Booking successful!');
       console.log(result);
       navigate('/book-ride/succesful', { state: { bookingDetails: result } });
       // Optionally, redirect to a success page or display confirmation details
@@ -415,6 +415,7 @@ export default function BookingPage() {
                 alt="Driver"
                 className="driverimg"
               />
+
               <div className="driverinfodetails">
                 <div className="drivername drivernamesummary">
                   {selectedDriver.name}
